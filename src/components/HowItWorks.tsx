@@ -37,8 +37,8 @@ export function HowItWorks() {
     <section className="relative py-20 md:py-28 overflow-hidden">
       {/* Split background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 gradient-teal" />
-        <div className="absolute inset-0 grid-pattern opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#042d2f] via-[#053e41] to-[#063a3c]" />
+        <div className="absolute inset-0 grid-pattern opacity-30" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +71,7 @@ export function HowItWorks() {
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className="group flex gap-5 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.08] hover:border-white/[0.15] rounded-xl p-5 transition-all duration-300"
+                  className="group flex gap-5 bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.12] hover:border-white/[0.2] rounded-xl p-5 transition-all duration-300"
                 >
                   {/* Number */}
                   <div className="shrink-0">
@@ -84,7 +84,7 @@ export function HowItWorks() {
                     <h3 className="text-white font-bold text-base mb-1">
                       {step.title}
                     </h3>
-                    <p className="text-white/50 text-sm leading-relaxed">
+                    <p className="text-white/65 text-sm leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -109,12 +109,12 @@ export function HowItWorks() {
               {metrics.map((metric, index) => (
                 <div
                   key={index}
-                  className="bg-white/[0.06] border border-white/10 rounded-xl p-5 text-center"
+                  className="bg-white/[0.08] border border-white/[0.12] rounded-xl p-5 text-center"
                 >
                   <p className="text-tes-gold font-black text-2xl md:text-3xl">
                     {metric.value}
                   </p>
-                  <p className="text-white/50 text-xs font-medium mt-1 uppercase tracking-wider">
+                  <p className="text-white/60 text-xs font-medium mt-1 uppercase tracking-wider">
                     {metric.label}
                   </p>
                 </div>
@@ -122,8 +122,8 @@ export function HowItWorks() {
             </div>
 
             {/* Leading path tags */}
-            <div className="bg-white/[0.05] border border-white/10 rounded-xl p-5">
-              <p className="text-white/40 text-xs uppercase tracking-wider font-semibold mb-3">
+            <div className="bg-white/[0.08] border border-white/[0.12] rounded-xl p-5">
+              <p className="text-white/50 text-xs uppercase tracking-wider font-semibold mb-3">
                 The Leading Path
               </p>
               <div className="flex flex-wrap gap-2">
@@ -138,7 +138,7 @@ export function HowItWorks() {
                 ].map((item) => (
                   <span
                     key={item}
-                    className="bg-tes-gold/10 border border-tes-gold/20 text-tes-gold-light px-3 py-1.5 rounded-lg text-xs font-medium"
+                    className="bg-tes-gold/15 border border-tes-gold/30 text-tes-gold-light px-3 py-1.5 rounded-lg text-xs font-medium"
                   >
                     {item}
                   </span>
