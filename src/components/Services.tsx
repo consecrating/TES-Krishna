@@ -1,102 +1,127 @@
 "use client";
 
-import { Megaphone, BarChart3, Calendar, RotateCcw, PieChart } from "lucide-react";
+import {
+  Megaphone,
+  BarChart3,
+  Calendar,
+  RotateCcw,
+  PieChart,
+  ArrowUpRight,
+  Zap,
+} from "lucide-react";
 
 const services = [
   {
     icon: Megaphone,
-    title: "Ongoing Promotional & Beneficial Offers",
-    description: "Continuous marketing campaigns that drive bookings",
+    title: "Promotional Offers",
+    description:
+      "Continuous marketing campaigns and beneficial offers that drive consistent bookings and brand visibility.",
+    tag: "Marketing",
   },
   {
     icon: BarChart3,
-    title: "Smart Dynamic Room Analysis",
-    description: "Data-driven pricing strategies for maximum revenue",
+    title: "Dynamic Room Pricing",
+    description:
+      "Smart data-driven rate analysis that maximizes RevPAR and keeps you competitive in real-time.",
+    tag: "Revenue",
   },
   {
     icon: Calendar,
-    title: "Reservations Management",
-    description: "Streamlined booking systems for optimal occupancy",
+    title: "Reservation Management",
+    description:
+      "Streamlined OTA distribution with real-time inventory synchronization across all channels.",
+    tag: "Operations",
   },
   {
     icon: RotateCcw,
-    title: "Revert Back to Go Forward",
-    description: "Learn from past data to improve future performance",
+    title: "Performance Analytics",
+    description:
+      "Learn from historical data to continuously improve future performance and strategy.",
+    tag: "Analytics",
   },
   {
     icon: PieChart,
     title: "Comp Set Analysis",
-    description: "Competitive market analysis to stay ahead",
+    description:
+      "Deep competitive market analysis to identify opportunities and stay ahead of competition.",
+    tag: "Intelligence",
+  },
+  {
+    icon: Zap,
+    title: "Field Sales",
+    description:
+      "On-ground sales team management and corporate tie-ups to drive direct bookings.",
+    tag: "Sales",
   },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="relative py-16 md:py-24 bg-tes-teal overflow-hidden">
-      {/* Torn paper top and bottom */}
-      <div className="absolute inset-0 torn-edge-bottom torn-edge-top bg-tes-teal" />
+    <section
+      id="services"
+      className="relative py-20 md:py-28 bg-white overflow-hidden"
+    >
+      {/* Background decoration */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-tes-teal-50/50 rounded-full -translate-y-1/2 blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
-          {/* Left content */}
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <div>
-            <p
-              className="text-tes-gold text-2xl md:text-3xl mb-2"
-              style={{ fontFamily: "var(--font-script)" }}
-            >
-              Services
-            </p>
-            <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-black uppercase leading-tight mb-6">
-              OUR TEAM WILL HANDLE THE COMPLETE ONLINE{" "}
-              <span className="text-tes-red">REVENUE MANAGEMENT</span> WITH REAL
-              TIME <span className="text-tes-gold">INVENTORY DISTRIBUTION</span>
+            <div className="inline-flex items-center gap-2 bg-tes-teal-50 px-4 py-2 rounded-full mb-4">
+              <div className="w-2 h-2 rounded-full bg-tes-teal" />
+              <span className="text-tes-teal text-sm font-semibold">
+                Our Services
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-tes-dark">
+              Complete Online{" "}
+              <span className="text-tes-teal">Revenue</span>
+              <br />
+              Management Solutions
             </h2>
+          </div>
+          <p className="text-tes-gray text-base max-w-md leading-relaxed lg:text-right">
+            Our team handles end-to-end online revenue management with real-time
+            inventory distribution across all platforms.
+          </p>
+        </div>
 
-            {/* Service cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 transition-colors duration-200"
-                >
-                  <div className="w-12 h-12 bg-tes-gold/20 rounded-full flex items-center justify-center mb-3">
-                    <service.icon className="text-tes-gold" size={24} />
-                  </div>
-                  <h3 className="text-white font-bold text-sm mb-1">
-                    {service.title}
-                  </h3>
-                  <p className="text-white/70 text-xs">{service.description}</p>
+        {/* Services grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="group relative bg-white border border-gray-100 hover:border-tes-teal/20 rounded-2xl p-6 transition-all duration-400 hover-lift overflow-hidden"
+            >
+              {/* Hover gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-tes-teal-50/0 to-tes-teal-50/0 group-hover:from-tes-teal-50/50 group-hover:to-transparent transition-all duration-500" />
+
+              <div className="relative z-10">
+                {/* Tag */}
+                <span className="inline-block text-[11px] font-semibold uppercase tracking-wider text-tes-teal bg-tes-teal-50 px-2.5 py-1 rounded-md mb-4">
+                  {service.tag}
+                </span>
+
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-xl bg-tes-teal/8 group-hover:bg-tes-teal/12 flex items-center justify-center mb-4 transition-colors">
+                  <service.icon size={22} className="text-tes-teal" />
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Right - hotel images */}
-          <div className="flex flex-col gap-4">
-            <div className="rounded-xl overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80"
-                alt="Luxury hotel room"
-                className="w-full h-48 md:h-64 object-cover"
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=300&q=80"
-                  alt="Hotel key card"
-                  className="w-full h-32 md:h-40 object-cover"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=300&q=80"
-                  alt="Hotel reception"
-                  className="w-full h-32 md:h-40 object-cover"
-                />
+                {/* Content */}
+                <h3 className="text-tes-dark font-bold text-lg mb-2 flex items-center gap-2">
+                  {service.title}
+                  <ArrowUpRight
+                    size={16}
+                    className="text-tes-gray/0 group-hover:text-tes-teal transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </h3>
+                <p className="text-tes-gray text-sm leading-relaxed">
+                  {service.description}
+                </p>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

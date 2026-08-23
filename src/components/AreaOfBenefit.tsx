@@ -12,39 +12,57 @@ import {
 const benefits = [
   {
     icon: Users,
-    title: "Front Office and HR",
+    title: "Front Office & HR",
     description:
-      "Cross Training, Set SOP & Proper Reporting System on Cloud Based",
+      "Cross Training, Set SOP & Proper Reporting System on Cloud Based platforms.",
+    accent: "border-tes-gold",
+    iconBg: "bg-tes-gold-50",
+    iconColor: "text-tes-gold",
   },
   {
     icon: TrendingUp,
     title: "Sales & Marketing",
     description:
-      "Generate the Business from the Market around, Pre-set Revenue Budget for Financial Year.",
+      "Generate business from the market, Pre-set Revenue Budget for the Financial Year.",
+    accent: "border-tes-teal",
+    iconBg: "bg-tes-teal-50",
+    iconColor: "text-tes-teal",
   },
   {
     icon: Sparkles,
     title: "House Keeping",
     description:
-      "Cleaning and Maintaining the Hygiene on given Set of Timing, Set of SOP, Weekly & Monthly Cleaning",
+      "Maintaining Hygiene on given timings, Set of SOP, Weekly & Monthly deep cleaning schedules.",
+    accent: "border-tes-gold",
+    iconBg: "bg-tes-gold-50",
+    iconColor: "text-tes-gold",
   },
   {
     icon: UtensilsCrossed,
-    title: "FNB Service",
+    title: "F&B Service",
     description:
-      "Time Delivery Proper Guidance on Food, Training, Up Selling Responsibility on FNB, Revenue and Maintenance",
+      "Time Delivery, Food Training, Up-Selling strategy, Revenue optimization and maintenance.",
+    accent: "border-tes-teal",
+    iconBg: "bg-tes-teal-50",
+    iconColor: "text-tes-teal",
   },
   {
     icon: PackageCheck,
-    title: "Stores and Purchase",
+    title: "Stores & Purchase",
     description:
-      "To get best Quality of Material with Low Price, responsible to Control the Expenses with over all Department.",
+      "Best quality materials at optimal prices, responsible expense control across departments.",
+    accent: "border-tes-gold",
+    iconBg: "bg-tes-gold-50",
+    iconColor: "text-tes-gold",
   },
   {
     icon: Wrench,
-    title: "Engg Department",
+    title: "Engineering",
     description:
-      "Maintain all the expenses and Control, AMC with the Vendor, Daily, weekly and Monthly Servicing",
+      "Expense control, AMC with vendors, Daily/Weekly/Monthly servicing schedules and maintenance.",
+    accent: "border-tes-teal",
+    iconBg: "bg-tes-teal-50",
+    iconColor: "text-tes-teal",
   },
 ];
 
@@ -52,73 +70,71 @@ export function AreaOfBenefit() {
   return (
     <section
       id="benefits"
-      className="relative py-16 md:py-24 bg-tes-gold overflow-hidden"
+      className="relative py-20 md:py-28 bg-tes-cream overflow-hidden"
     >
-      {/* TES Logo top-right */}
-      <div className="absolute top-6 right-6 md:top-8 md:right-8 bg-tes-red px-4 py-1.5 shadow-lg z-10">
-        <span className="text-white font-black text-lg tracking-[0.2em]">
-          T E S
-        </span>
-        <span className="block text-white font-semibold text-xs tracking-wider text-center">
-          HOSPITALITY
-        </span>
-      </div>
+      {/* Decorative blobs */}
+      <div className="absolute top-20 right-0 w-[300px] h-[300px] bg-tes-gold/5 rounded-full blur-[80px]" />
+      <div className="absolute bottom-20 left-0 w-[250px] h-[250px] bg-tes-teal/5 rounded-full blur-[80px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
-          {/* Left - Benefits list */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 bg-tes-gold-50 px-4 py-2 rounded-full mb-4">
+            <div className="w-2 h-2 rounded-full bg-tes-gold" />
+            <span className="text-tes-gold-dark text-sm font-semibold">
+              Departments We Transform
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-tes-dark">
+            Area of{" "}
+            <span className="text-tes-gold">Benefit</span>
+          </h2>
+          <p className="mt-4 text-tes-gray text-base md:text-lg leading-relaxed">
+            We provide operational excellence across all core hotel departments
+          </p>
+        </div>
+
+        {/* Benefits grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {benefits.map((benefit, index) => (
+            <div
+              key={index}
+              className={`group bg-white rounded-2xl p-6 border-l-4 ${benefit.accent} shadow-sm hover:shadow-premium transition-all duration-400 hover-lift`}
+            >
+              {/* Icon */}
+              <div
+                className={`w-12 h-12 rounded-xl ${benefit.iconBg} flex items-center justify-center mb-4`}
+              >
+                <benefit.icon className={benefit.iconColor} size={22} />
+              </div>
+
+              {/* Content */}
+              <h3 className="text-tes-dark font-bold text-base mb-2">
+                {benefit.title}
+              </h3>
+              <p className="text-tes-gray text-sm leading-relaxed">
+                {benefit.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA banner */}
+        <div className="mt-14 bg-gradient-to-r from-tes-teal to-tes-teal-dark rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-tes-dark uppercase mb-10">
-              AREA OF BENEFIT
-            </h2>
-
-            <div className="space-y-6">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="group">
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-tes-teal/20 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-                      <benefit.icon className="text-tes-teal" size={20} />
-                    </div>
-                    <div>
-                      <h3 className="text-tes-dark font-bold text-base md:text-lg underline underline-offset-2">
-                        {benefit.title}
-                      </h3>
-                      <p className="text-tes-dark/80 text-sm md:text-base mt-1 leading-relaxed">
-                        {benefit.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <h3 className="text-white font-bold text-xl md:text-2xl">
+              Ready to transform your hotel operations?
+            </h3>
+            <p className="text-white/70 text-sm mt-2">
+              Let&apos;s discuss how TES can improve every department of your hotel.
+            </p>
           </div>
-
-          {/* Right - Images */}
-          <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=400&q=80"
-                  alt="Modern hotel interior"
-                  className="w-full h-48 md:h-64 object-cover"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80"
-                  alt="Hotel living room"
-                  className="w-full h-48 md:h-64 object-cover"
-                />
-              </div>
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&q=80"
-                alt="Luxury hotel bedroom"
-                className="w-full h-48 md:h-64 object-cover"
-              />
-            </div>
-          </div>
+          <a
+            href="#contact"
+            className="shrink-0 bg-white hover:bg-tes-gold-50 text-tes-teal-dark px-6 py-3.5 rounded-xl font-bold text-sm transition-all duration-300 shadow-lg"
+          >
+            Get Started Today
+          </a>
         </div>
       </div>
     </section>

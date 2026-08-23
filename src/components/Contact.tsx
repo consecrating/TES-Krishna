@@ -1,96 +1,160 @@
 "use client";
 
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
 export function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-16 md:py-24 bg-white overflow-hidden"
+      className="relative py-20 md:py-28 gradient-dark overflow-hidden"
     >
-      {/* Subtle marble/white texture background */}
-      <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-gray-100 via-white to-gray-200" />
-
-      {/* Teal wave at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32">
-        <svg
-          viewBox="0 0 1440 120"
-          preserveAspectRatio="none"
-          className="w-full h-full"
-          fill="var(--color-tes-teal)"
-        >
-          <path d="M0,60 C200,90 400,30 600,60 C800,90 1000,30 1200,60 C1350,80 1400,70 1440,60 L1440,120 L0,120 Z" />
-        </svg>
-      </div>
+      {/* Background effects */}
+      <div className="absolute inset-0 grid-pattern" />
+      <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-tes-gold/5 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-tes-teal/5 rounded-full blur-[100px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Title */}
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-tes-red uppercase text-center mb-12">
-          CONTACT US
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          {/* Left - Logo and branding */}
-          <div className="flex flex-col items-center md:items-start">
-            <div className="bg-tes-red px-6 py-3 shadow-xl mb-4">
-              <span className="text-white font-black text-3xl tracking-[0.2em]">
-                T E S
-              </span>
-              <span className="block text-white font-semibold text-sm tracking-wider text-center">
-                HOSPITALITY
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+          {/* Left - Info */}
+          <div>
+            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6">
+              <Send size={14} className="text-tes-gold" />
+              <span className="text-tes-gold text-sm font-semibold">
+                Get In Touch
               </span>
             </div>
-            <p className="text-xl md:text-2xl font-bold mt-4">
-              <span className="text-tes-red">T</span>
-              <span className="text-tes-teal">RAVEL </span>
-              <span className="text-tes-red">E</span>
-              <span className="text-tes-teal">AT </span>
-              <span className="text-tes-red">S</span>
-              <span className="text-tes-teal">TAY</span>
-              <span className="text-tes-dark"> - </span>
-              <span className="text-tes-teal">HOSPITALITY</span>
+
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
+              Let&apos;s Grow Your{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tes-gold to-tes-gold-light">
+                Hotel Revenue
+              </span>{" "}
+              Together
+            </h2>
+
+            <p className="mt-4 text-white/60 text-base md:text-lg leading-relaxed max-w-lg">
+              Connect with our expert team to discuss how we can elevate your
+              hotel&apos;s performance and profitability.
             </p>
-          </div>
 
-          {/* Right - Contact info card */}
-          <div className="bg-tes-gold rounded-2xl p-6 md:p-8 shadow-xl">
-            <h3 className="text-white font-bold text-xl mb-6 text-center">
-              Neha Naik - Director
-            </h3>
+            {/* Contact cards */}
+            <div className="mt-10 space-y-4">
+              {/* Director */}
+              <div className="flex items-center gap-4 bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
+                <div className="w-14 h-14 rounded-full bg-tes-gold/15 flex items-center justify-center shrink-0">
+                  <span className="text-tes-gold font-bold text-lg">NN</span>
+                </div>
+                <div>
+                  <p className="text-white font-bold">Neha Naik</p>
+                  <p className="text-white/50 text-sm">Director, TES Hospitality</p>
+                </div>
+              </div>
 
-            <div className="space-y-4">
               {/* Phone */}
               <a
                 href="tel:7972374880"
-                className="flex items-center gap-3 text-white hover:text-tes-cream transition-colors duration-200"
+                className="group flex items-center gap-4 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-tes-gold/30 rounded-xl p-5 transition-all duration-300"
               >
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center shrink-0">
-                  <Phone size={18} />
+                <div className="w-12 h-12 rounded-xl bg-tes-gold/10 flex items-center justify-center shrink-0 group-hover:bg-tes-gold/20 transition-colors">
+                  <Phone size={20} className="text-tes-gold" />
                 </div>
-                <span className="font-semibold text-lg">7972374880</span>
+                <div>
+                  <p className="text-white/40 text-xs uppercase tracking-wider font-medium">
+                    Phone
+                  </p>
+                  <p className="text-white font-semibold text-lg">
+                    +91 7972374880
+                  </p>
+                </div>
               </a>
 
               {/* Email */}
               <a
                 href="mailto:info@teshospitality.co.in"
-                className="flex items-center gap-3 text-white hover:text-tes-cream transition-colors duration-200"
+                className="group flex items-center gap-4 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-tes-teal/30 rounded-xl p-5 transition-all duration-300"
               >
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center shrink-0">
-                  <Mail size={18} />
+                <div className="w-12 h-12 rounded-xl bg-tes-teal/10 flex items-center justify-center shrink-0 group-hover:bg-tes-teal/20 transition-colors">
+                  <Mail size={20} className="text-tes-teal-light" />
                 </div>
-                <span className="font-semibold text-base">
-                  info@teshospitality.co.in
-                </span>
+                <div>
+                  <p className="text-white/40 text-xs uppercase tracking-wider font-medium">
+                    Email
+                  </p>
+                  <p className="text-white font-semibold">
+                    info@teshospitality.co.in
+                  </p>
+                </div>
               </a>
 
               {/* Address */}
-              <div className="flex items-start gap-3 text-white">
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin size={18} />
+              <div className="flex items-start gap-4 bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
+                <div className="w-12 h-12 rounded-xl bg-tes-gold/10 flex items-center justify-center shrink-0">
+                  <MapPin size={20} className="text-tes-gold" />
                 </div>
-                <p className="font-medium text-sm leading-relaxed">
-                  Anitha Nilaya&quot; near Kondibettu Mala - Chowki, Mala (p.o),
-                  Karkala (t.q), Udupi (d.t) - 574122
+                <div>
+                  <p className="text-white/40 text-xs uppercase tracking-wider font-medium">
+                    Office
+                  </p>
+                  <p className="text-white/80 text-sm leading-relaxed mt-1">
+                    Anitha Nilaya, near Kondibettu Mala - Chowki,
+                    <br />
+                    Mala (p.o), Karkala (t.q), Udupi (d.t) - 574122
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right - Contact Form / Card */}
+          <div className="flex flex-col justify-center">
+            <div className="bg-white/[0.04] border border-white/[0.1] rounded-3xl p-8 md:p-10 backdrop-blur-sm">
+              <h3 className="text-white font-bold text-xl mb-6">
+                Send us a message
+              </h3>
+
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="w-full bg-white/[0.06] border border-white/10 focus:border-tes-gold/50 rounded-xl px-5 py-3.5 text-white placeholder:text-white/30 text-sm outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    className="w-full bg-white/[0.06] border border-white/10 focus:border-tes-gold/50 rounded-xl px-5 py-3.5 text-white placeholder:text-white/30 text-sm outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    className="w-full bg-white/[0.06] border border-white/10 focus:border-tes-gold/50 rounded-xl px-5 py-3.5 text-white placeholder:text-white/30 text-sm outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    placeholder="Tell us about your hotel..."
+                    rows={4}
+                    className="w-full bg-white/[0.06] border border-white/10 focus:border-tes-gold/50 rounded-xl px-5 py-3.5 text-white placeholder:text-white/30 text-sm outline-none transition-colors resize-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-tes-gold hover:bg-tes-gold-dark text-white py-4 rounded-xl font-bold text-base transition-all duration-300 shadow-gold flex items-center justify-center gap-2"
+                >
+                  <Send size={16} />
+                  Send Message
+                </button>
+              </form>
+
+              {/* Business hours */}
+              <div className="mt-6 flex items-center gap-3 pt-5 border-t border-white/10">
+                <Clock size={16} className="text-white/40" />
+                <p className="text-white/40 text-xs">
+                  We typically respond within 24 hours
                 </p>
               </div>
             </div>
