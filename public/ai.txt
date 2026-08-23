@@ -1,0 +1,11 @@
+# ai.txt — AI Training Opt-Out
+# Reference: https://site.spawning.ai/spawning-ai-txt
+
+User-Agent: *
+Disallow: /
+
+# This website content is NOT licensed for AI training.
+# This website content is NOT licensed for data mining.
+# This website content is NOT licensed for scraping.
+# This website content is NOT licensed for reproduction.
+# All rights reserved. DEMO ONLY.

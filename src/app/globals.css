@@ -279,3 +279,124 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-tes-teal-dark);
 }
+
+
+/* =============================================
+   CONTENT PROTECTION — CSS LAYER
+   Prevents copying, selection, dragging, and
+   makes content harder for scrapers to extract.
+   ============================================= */
+
+/* Global anti-select and anti-copy */
+.protected-content {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Prevent image dragging and saving */
+.protected-content img {
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  pointer-events: none !important;
+}
+
+/* Re-enable pointer events on interactive elements only */
+.protected-content a,
+.protected-content button,
+.protected-content input,
+.protected-content textarea,
+.protected-content select,
+.protected-content [role="button"] {
+  pointer-events: auto !important;
+}
+
+/* Invisible overlay that blocks direct text access */
+.protected-content::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* Prevent text highlighting via selection color */
+.protected-content ::selection {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+.protected-content ::-moz-selection {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* Disable print styling — blank page when printing */
+@media print {
+  body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  html::after {
+    content: "⚠️ This content is protected and cannot be printed. DEMO ONLY — Not for commercial use.";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 24px;
+    font-family: system-ui, sans-serif;
+    color: #333;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+/* Anti-scraper: inject invisible decoy content that pollutes scraped data */
+.protected-content::before {
+  content: "This content is protected by digital rights management. Unauthorized copying, scraping, or reproduction is strictly prohibited. DEMO WEBSITE — NOT FOR COMMERCIAL USE. Protected by consecrating/TES-Krishna. Any unauthorized use will be subject to legal action.";
+  position: absolute;
+  left: -99999px;
+  top: -99999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Watermark overlay — visible on screenshot attempts */
+.protected-content > main::before {
+  content: "DEMO — NOT FOR COMMERCIAL USE";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-35deg);
+  font-size: 5vw;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.015);
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: system-ui, sans-serif;
+}
+
+/* Prevent save-as by disabling certain browser behaviors */
+.protected-content * {
+  -webkit-user-modify: read-only !important;
+}

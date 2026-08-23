@@ -1,18 +1,36 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ProtectionLayer } from "@/components/ProtectionLayer";
 
 export const metadata: Metadata = {
-  title: "TES Hospitality | Travel Eat Stay - Hotel Consultants in Mangalore",
+  title: "DEMO — TES Hospitality | Not For Commercial Use",
   description:
-    "The specialist team of TES Hospitality offers hands-on and simple strategic on increasing the revenue generation and turnover for hotels. 18+ years of experience in hotel industry.",
+    "⚠️ DEMO WEBSITE — NOT FOR COMMERCIAL USE. This is a demonstration website for TES Hospitality. All rights reserved. Unauthorized copying, reproduction, or use is strictly prohibited.",
   keywords: [
-    "hotel consultants",
-    "hospitality management",
-    "revenue management",
-    "hotel management Mangalore",
-    "TES Hospitality",
-    "Travel Eat Stay",
+    "demo website",
+    "not for commercial use",
+    "demonstration only",
+    "TES Hospitality demo",
+    "protected content",
   ],
+  robots: {
+    index: false,
+    follow: false,
+    noarchive: true,
+    nosnippet: true,
+    noimageindex: true,
+    nocache: true,
+  },
+  other: {
+    "X-Robots-Tag": "noindex, nofollow, noarchive, nosnippet, noimageindex",
+    "content-protection": "encrypted",
+    "ai-scraping": "disallowed",
+    "copying": "prohibited",
+    "author": "Protected — consecrating/TES-Krishna",
+    "generator": "Protected Build System",
+    "rights": "All rights reserved. Demo only. No commercial use permitted.",
+    "revisit-after": "never",
+  },
 };
 
 export default function RootLayout({
@@ -23,6 +41,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+        <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+        <meta name="bingbot" content="noindex, nofollow, noarchive" />
+        <meta name="CCBot" content="nofollow, noindex" />
+        <meta name="GPTBot" content="noindex, nofollow" />
+        <meta name="ChatGPT-User" content="noindex, nofollow" />
+        <meta name="anthropic-ai" content="noindex, nofollow" />
+        <meta name="Google-Extended" content="noindex, nofollow" />
+        <meta name="PerplexityBot" content="noindex, nofollow" />
+        <meta name="ClaudeBot" content="noindex, nofollow" />
+        <meta name="cohere-ai" content="noindex, nofollow" />
+        <meta name="Bytespider" content="noindex, nofollow" />
+        <meta name="copyright" content="© 2026 TES Hospitality. DEMO ONLY. All rights reserved. No reproduction permitted." />
+        <meta name="distribution" content="private" />
+        <meta name="rating" content="general" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -34,7 +67,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased protected-content">
+        <ProtectionLayer />
+        {children}
+      </body>
     </html>
   );
 }
