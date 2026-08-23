@@ -30,49 +30,49 @@ export function Welcome() {
 
         {/* Feature grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {/* Card 1 */}
-          <div className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-tes-gold/30 shadow-sm hover:shadow-premium transition-all duration-400 hover-lift">
-            <div className="w-14 h-14 rounded-xl bg-tes-gold-50 flex items-center justify-center mb-4 group-hover:bg-tes-gold/10 transition-colors">
-              <span className="text-tes-gold text-2xl font-black">T</span>
+          {/* Card 1 - Gold */}
+          <div className="group bg-tes-gold rounded-2xl p-6 shadow-gold hover:shadow-lg transition-all duration-400 hover-lift">
+            <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mb-4">
+              <span className="text-white text-2xl font-black">T</span>
             </div>
-            <h3 className="text-tes-dark font-bold text-lg mb-2">Travel</h3>
-            <p className="text-tes-gray text-sm leading-relaxed">
+            <h3 className="text-white font-bold text-lg mb-2">Travel</h3>
+            <p className="text-white/80 text-sm leading-relaxed">
               Strategic positioning of hotels in the competitive travel
               marketplace with data-driven marketing approaches.
             </p>
-            <div className="mt-4 flex items-center gap-2 text-tes-gold text-sm font-semibold">
+            <div className="mt-4 flex items-center gap-2 text-white text-sm font-semibold">
               <CheckCircle size={14} />
               <span>Market Positioning</span>
             </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-tes-teal/30 shadow-sm hover:shadow-premium transition-all duration-400 hover-lift">
-            <div className="w-14 h-14 rounded-xl bg-tes-teal-50 flex items-center justify-center mb-4 group-hover:bg-tes-teal/10 transition-colors">
-              <span className="text-tes-teal text-2xl font-black">E</span>
+          {/* Card 2 - Teal */}
+          <div className="group bg-tes-teal rounded-2xl p-6 shadow-teal hover:shadow-lg transition-all duration-400 hover-lift">
+            <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mb-4">
+              <span className="text-white text-2xl font-black">E</span>
             </div>
-            <h3 className="text-tes-dark font-bold text-lg mb-2">Eat</h3>
-            <p className="text-tes-gray text-sm leading-relaxed">
+            <h3 className="text-white font-bold text-lg mb-2">Eat</h3>
+            <p className="text-white/80 text-sm leading-relaxed">
               Comprehensive F&B service management including training, up-selling
               strategies, and revenue optimization.
             </p>
-            <div className="mt-4 flex items-center gap-2 text-tes-teal text-sm font-semibold">
+            <div className="mt-4 flex items-center gap-2 text-white text-sm font-semibold">
               <CheckCircle size={14} />
               <span>F&B Excellence</span>
             </div>
           </div>
 
-          {/* Card 3 */}
-          <div className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-tes-red/20 shadow-sm hover:shadow-premium transition-all duration-400 hover-lift">
-            <div className="w-14 h-14 rounded-xl bg-red-50 flex items-center justify-center mb-4 group-hover:bg-red-100/50 transition-colors">
-              <span className="text-tes-red text-2xl font-black">S</span>
+          {/* Card 3 - Red */}
+          <div className="group bg-tes-red rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-400 hover-lift">
+            <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mb-4">
+              <span className="text-white text-2xl font-black">S</span>
             </div>
-            <h3 className="text-tes-dark font-bold text-lg mb-2">Stay</h3>
-            <p className="text-tes-gray text-sm leading-relaxed">
+            <h3 className="text-white font-bold text-lg mb-2">Stay</h3>
+            <p className="text-white/80 text-sm leading-relaxed">
               Creating the best-in-class hotel assets with operational excellence
               in housekeeping, front office, and guest experience.
             </p>
-            <div className="mt-4 flex items-center gap-2 text-tes-red text-sm font-semibold">
+            <div className="mt-4 flex items-center gap-2 text-white text-sm font-semibold">
               <CheckCircle size={14} />
               <span>Guest Satisfaction</span>
             </div>
